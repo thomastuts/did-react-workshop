@@ -35,6 +35,11 @@ class Greeting extends React.Component {
     return nextState.secondsSinceMount % 2 === 0;
   }
 
+  handleClickButton = (event) => {
+    event.persist();
+    console.log('I have been clicked!', event);
+  };
+
   render() {
     return (
       <div>
@@ -43,6 +48,7 @@ class Greeting extends React.Component {
         <p>2 + 2 equals {2 + 2}</p>
         <p>The meaning of life is {THE_MAGIC_NUMBER}</p>
         <p>It has been {this.state.secondsSinceMount} seconds since this component was mounted.</p>
+        <button onClick={this.handleClickButton}>Click me!</button>
       </div>
     );
   }
