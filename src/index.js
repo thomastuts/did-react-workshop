@@ -27,6 +27,14 @@ class Greeting extends React.Component {
     }, 1000);
   }
 
+  componentDidUpdate() {
+    console.log('Greeting component was updated');
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.secondsSinceMount % 2 === 0;
+  }
+
   render() {
     return (
       <div>
