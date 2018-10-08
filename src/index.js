@@ -15,6 +15,7 @@ class Greeting extends React.Component {
 
   state = {
     secondsSinceMount: 0,
+    isLoggedIn: false,
   };
 
   componentDidMount() {
@@ -41,6 +42,18 @@ class Greeting extends React.Component {
   };
 
   render() {
+    let authButton;
+
+    if (this.state.isLoggedIn) {
+      authButton = (
+        <button>Log out</button>
+      );
+    } else {
+      authButton = (
+        <button>Log in</button>
+      );
+    }
+
     return (
       <div>
         <h1>Hello {this.props.name}!</h1>
@@ -49,6 +62,7 @@ class Greeting extends React.Component {
         <p>The meaning of life is {THE_MAGIC_NUMBER}</p>
         <p>It has been {this.state.secondsSinceMount} seconds since this component was mounted.</p>
         <button onClick={this.handleClickButton}>Click me!</button>
+        {authButton}
       </div>
     );
   }
