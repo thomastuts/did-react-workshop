@@ -13,6 +13,20 @@ class Greeting extends React.Component {
     name: PropTypes.string,
   };
 
+  state = {
+    secondsSinceMount: 0,
+  };
+
+  componentDidMount() {
+    setInterval(() => {
+      this.setState((state) => {
+        return {
+          secondsSinceMount: state.secondsSinceMount + 1,
+        };
+      });
+    }, 1000);
+  }
+
   render() {
     return (
       <div>
@@ -20,6 +34,7 @@ class Greeting extends React.Component {
         <h2>This is a subtitle!</h2>
         <p>2 + 2 equals {2 + 2}</p>
         <p>The meaning of life is {THE_MAGIC_NUMBER}</p>
+        <p>It has been {this.state.secondsSinceMount} seconds since this component was mounted.</p>
       </div>
     );
   }
