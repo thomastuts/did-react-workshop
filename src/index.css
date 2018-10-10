@@ -1,0 +1,12 @@
+.container {
+  max-width: 500px;
+  max-height: 500px !important;
+  margin: 0 auto;
+  overflow: hidden;
+  overflow-y: auto;
+  border: 1px solid black;
+}
+
+.simplebar-scrollbar:before {
+  background-color: red !important;
+}
