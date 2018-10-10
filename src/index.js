@@ -6,9 +6,15 @@ import './index.css';
 import 'simplebar/dist/simplebar.css';
 
 class App extends React.Component {
+  containerRef = React.createRef();
+
+  componentDidMount() {
+    new Simplebar(this.containerRef.current);
+  }
+
   render() {
     return (
-      <div className="container">
+      <div className="container" ref={this.containerRef}>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan elit neque, id finibus dui dignissim vitae. Nulla luctus, purus sit amet aliquam posuere, orci enim consequat tellus, eu lobortis dui ex ut metus. Etiam sagittis ligula a maximus luctus. Sed sed magna nec tellus tincidunt ornare in eget ligula. Donec velit odio, posuere ac libero nec, ullamcorper sodales nisi. Integer nec nunc ex. Morbi laoreet nibh nisi. In sit amet dui et est tempor hendrerit. Phasellus maximus diam eros. Donec ornare magna ut suscipit porttitor. Etiam volutpat lacus justo, et volutpat purus sodales quis. Donec volutpat dictum aliquet. Curabitur eleifend ligula vitae tortor accumsan luctus. Praesent quis nisi id lorem vehicula imperdiet malesuada vitae felis. Pellentesque malesuada lorem vitae maximus aliquam.
         </p>
