@@ -1,0 +1,8 @@
+.designer {
+  display: flex;
+}
+
+.designer__content {
+  margin-left: 1rem;
+  flex: 1;
+}
