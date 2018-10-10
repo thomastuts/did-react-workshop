@@ -8,13 +8,37 @@ import Card from './components/Card/Card';
 import './index.css';
 
 class App extends React.Component {
-  // TODO: add state property to keep track of all liked designers
-  // TODO: implement method to toggle liked status for one designer
+  state = {
+    likedDesigners: [],
+  };
+
+  handleToggleLikedStatusForDesigner = (designerId) => {
+    if (this.state.likedDesigners.includes(designerId)) {
+      this.setState({
+        likedDesigners: this.state.likedDesigners.filter(id => id !== designerId),
+      });
+    } else {
+      this.setState({
+        likedDesigners: [
+          ...this.state.likedDesigners,
+          designerId,
+        ],
+      });
+    }
+  };
 
   render() {
     return (
       <div className="app">
-        {/*TODO: map the designers and add the <Designer /> component with all the right props below*/}
+        {designers.map(designer => (
+          <Card key={designer.id}>
+            <Designer
+              designer={designer}
+              isLiked={this.state.likedDesigners.includes(designer.id)}
+              onToggleLikedStatus={() => this.handleToggleLikedStatusForDesigner(designer.id)}
+            />
+          </Card>
+        ))}
       </div>
     );
   }

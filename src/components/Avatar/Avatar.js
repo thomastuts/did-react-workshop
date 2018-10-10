@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import './Avatar.css';
 
 export default function Avatar(props) {
-  // TODO: add image to backgroundImage styles below
   return (
-    <div className="avatar"></div>
+    <div className="avatar" style={{ backgroundImage: `url(${props.image})` }}></div>
   );
 }
 

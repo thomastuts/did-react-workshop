@@ -10,14 +10,16 @@ export default function Designer(props) {
   return (
     <div className="designer">
       <div className="designer__visual">
-        {/*TODO: add Avatar component here*/}
+        <Avatar image={props.designer.avatar} />
       </div>
       <div className="designer__content">
         <p className="designer__quote">
-          {/*TODO: add quote here}*/}
+          {props.designer.quote}
         </p>
         <Button
           label="♥️"
+          style={{ opacity: props.isLiked ? 1 : 0.4 }}
+          onClick={props.onToggleLikedStatus}
         />
       </div>
     </div>
