@@ -14,7 +14,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        {/*TODO: map the designers and add the <Designer /> component with all the right props below*/}
+        {/*TODO: map the designers and add the <Designer /> component with all the right props below.
+        Wrap the Designer component in a Card component.*/}
       </div>
     );
   }
