@@ -5,6 +5,7 @@ class App extends React.Component {
   state = {
     email: '',
     password: '',
+    message: '',
   };
 
   handleInputChange = (e) => {
@@ -15,7 +16,15 @@ class App extends React.Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(`Email: ${this.state.email}, password: ${this.state.password}`);
+    if (this.state.password = 'foo') {
+      this.setState({
+        message: 'Success! Welcome :)',
+      });
+    } else {
+      this.setState({
+        message: 'Oops! Check your credentials :(',
+      });
+    }
   };
 
   render() {
@@ -36,6 +45,7 @@ class App extends React.Component {
           </label>
         </div>
         <button type="submit">Log in</button>
+        {this.state.message && <p id="message">{this.state.message}</p>}
       </form>
     );
   }
